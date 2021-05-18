@@ -18,19 +18,19 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.xml.ws.Response;
 import java.util.Base64;
 import java.util.UUID;
-
-
+//made authentication controller a rest controller
+@RestController
 @RequestMapping("/")
 public class AuthenticationController {
     @Autowired
     private AuthenticationService authenticationService;
-
+    //implemeting endpoint for authentication
     @RequestMapping(method = RequestMethod.POST, path = "/auth/login", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<AuthorizedUserResponse> login(@RequestHeader("authorization") final String authorization) throws AuthenticationFailedException {
-        byte[] decode = Base64.getDecoder().decode(authorization);
+        byte[] decode = Base64.getDecoder().decode(authorization); //decoding from base64 encoding
         String decodedText = new String(decode);
         String[] decodedArray = decodedText.split(":");
-
+        //calling business logic for authenticating user
         UserAuthTokenEntity userAuthToken = authenticationService.authenticate(decodedArray[0], decodedArray[1]);
 
         UserEntity user = userAuthToken.getUser();
@@ -39,7 +39,7 @@ public class AuthenticationController {
                 .firstName(user.getFirstName()).lastName(user.getLastName()).emailAddress(user.getEmail()).mobilePhone(user.getMobilePhone())
                 .lastLoginTime(user.getLastLoginAt()).role(user.getRole());
         HttpHeaders headers = new HttpHeaders();
-        headers.add("access-token", userAuthToken.getAccessToken());
-        return null;
+        headers.add("access-token", userAuthToken.getAccessToken()); //setting access token in response header
+        return new ResponseEntity<AuthorizedUserResponse>(authorizedUserResponse, headers, HttpStatus.OK); //returned user data with 200 status code
     }
 }
