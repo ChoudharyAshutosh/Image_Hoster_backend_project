@@ -14,8 +14,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+@RestController
 @RequestMapping("/")
+//implementing endpoint for admin controller
 public class AdminController {
 
 
@@ -24,11 +25,11 @@ public class AdminController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/images/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<ImageDetailsResponse> getImage(@PathVariable("id") final String imageUuid, @RequestHeader("authorization") final String authorization) throws ImageNotFoundException, UnauthorizedException, UserNotSignedInException {
-
+        //calling business logic for fetching image details
         final ImageEntity imageEntity = adminService.getImage(imageUuid, authorization);
 
         ImageDetailsResponse imageDetailsResponse = new ImageDetailsResponse().image(imageEntity.getImage()).id((int) imageEntity.getId()).name(imageEntity.getName()).description(imageEntity.getDescription()).status(imageEntity.getStatus());
-        return null;
+        return new ResponseEntity<ImageDetailsResponse>(imageDetailsResponse, HttpStatus.OK);  //returned image data with 200 status code
     }
 
 

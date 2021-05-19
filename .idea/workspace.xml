@@ -9,16 +9,13 @@
   <component name="ChangeListManager">
     <list default="true" id="0ed3f177-2b00-4cd4-a89a-4631b572d221" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/technical-api/src/main/java/com/upgrad/technical/api/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/technical-api/src/main/java/com/upgrad/technical/api/controller/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/technical-api/src/main/java/com/upgrad/technical/api/controller/ImageUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/technical-api/src/main/java/com/upgrad/technical/api/controller/ImageUploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/technical-api/src/main/java/com/upgrad/technical/api/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/technical-api/src/main/java/com/upgrad/technical/api/controller/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/technical-api/src/main/java/com/upgrad/technical/api/exception/RestExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/technical-api/src/main/java/com/upgrad/technical/api/exception/RestExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/technical-api/target/classes/com/upgrad/technical/api/controller/ImageUploadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/technical-api/target/classes/com/upgrad/technical/api/controller/ImageUploadController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/technical-api/target/classes/com/upgrad/technical/api/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/technical-api/target/classes/com/upgrad/technical/api/controller/AdminController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/technical-api/target/classes/com/upgrad/technical/api/exception/RestExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/technical-api/target/classes/com/upgrad/technical/api/exception/RestExceptionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/technical-service/src/main/java/com/upgrad/technical/service/business/ImageUploadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/technical-service/src/main/java/com/upgrad/technical/service/business/ImageUploadService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/technical-service/src/main/java/com/upgrad/technical/service/business/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/technical-service/src/main/java/com/upgrad/technical/service/business/AdminService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/technical-service/src/main/java/com/upgrad/technical/service/dao/ImageDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/technical-service/src/main/java/com/upgrad/technical/service/dao/ImageDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/technical-service/src/main/java/com/upgrad/technical/service/exception/UploadFailedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/technical-service/src/main/java/com/upgrad/technical/service/exception/UploadFailedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/business/AuthenticationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/business/AuthenticationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/business/ImageUploadService.class" beforeDir="false" afterPath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/business/ImageUploadService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/business/AdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/business/AdminService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/dao/ImageDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/dao/ImageDao.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -191,7 +188,7 @@
       <workItem from="1537099641916" duration="4058000" />
       <workItem from="1537540059296" duration="1362000" />
       <workItem from="1621350273327" duration="12304000" />
-      <workItem from="1621397854813" duration="8005000" />
+      <workItem from="1621397854813" duration="11612000" />
     </task>
     <servers />
   </component>
