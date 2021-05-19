@@ -18,7 +18,6 @@ import java.time.ZonedDateTime;
 //Added named query for fetching user details by uuid
 @NamedQueries({
         @NamedQuery(name = "userByEmail", query = "select u from UserEntity u where u.email = :email"),
-        @NamedQuery(name = "userByUuid", query = "select u from UserEntity  u where u.uuid = :uuid")
 })
 public class UserEntity implements Serializable {
 

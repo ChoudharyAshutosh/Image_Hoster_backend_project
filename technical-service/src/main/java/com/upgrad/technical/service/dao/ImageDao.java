@@ -5,6 +5,7 @@ import com.upgrad.technical.service.entity.UserAuthTokenEntity;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 
@@ -28,7 +29,7 @@ public class ImageDao {
     }
 
     public ImageEntity getImage(final String imageUuid) {
-        try{ //fetching image details from database
+        try{ //fetching image details from database using Uuid
             return entityManager.createNamedQuery("ImageEntityByUuid",ImageEntity.class).setParameter("uuid", imageUuid).getSingleResult();
         }catch (NoResultException nre){
             return null;
@@ -36,10 +37,15 @@ public class ImageDao {
     }
 
     public ImageEntity getImageById(final long Id) {
-        return null;
+        try{ //fetching image details from database using Id
+            return entityManager.createNamedQuery("ImageEntityByid",ImageEntity.class).setParameter("id", Id).getSingleResult();
+        }catch (NoResultException nre){
+            return null;
+        }
     }
 
     public ImageEntity updateImage(final ImageEntity imageEntity) {
-        return null;
+        entityManager.merge(imageEntity); //updating details of image in database
+        return imageEntity;
     }
 }

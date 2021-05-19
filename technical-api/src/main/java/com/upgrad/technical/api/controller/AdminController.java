@@ -22,7 +22,7 @@ public class AdminController {
 
     @Autowired
     private AdminService adminService;
-
+    //fetching image details
     @RequestMapping(method = RequestMethod.GET, path = "/images/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<ImageDetailsResponse> getImage(@PathVariable("id") final String imageUuid, @RequestHeader("authorization") final String authorization) throws ImageNotFoundException, UnauthorizedException, UserNotSignedInException {
         //calling business logic for fetching image details
@@ -32,7 +32,7 @@ public class AdminController {
         return new ResponseEntity<ImageDetailsResponse>(imageDetailsResponse, HttpStatus.OK);  //returned image data with 200 status code
     }
 
-
+    //updating image details
     @RequestMapping(method = RequestMethod.PUT, path = "/images/update/{image_id}", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<UpdateImageResponse> updateImage(final UpdateImageRequest updateImageRequest, @PathVariable("image_id") final long image_id, @RequestHeader("authorization") final String authorization) throws ImageNotFoundException, UnauthorizedException, UserNotSignedInException {
         ImageEntity imageEntity = new ImageEntity();
@@ -46,7 +46,7 @@ public class AdminController {
 
         ImageEntity updatedimageEntity = adminService.updateImage(imageEntity, authorization);
         UpdateImageResponse updateImageResponse = new UpdateImageResponse().id((int) updatedimageEntity.getId()).status(updatedimageEntity.getStatus());
-        return null;
+        return new ResponseEntity<UpdateImageResponse>(updateImageResponse, HttpStatus.OK); //returned image id and status with 200 status code
     }
 
 }
