@@ -24,8 +24,12 @@ public class ImageUploadService {
     @Transactional(propagation = Propagation.REQUIRED)
     public ImageEntity upload(ImageEntity imageEntity, final String authorizationToken) throws UploadFailedException {
         UserAuthTokenEntity userAuthTokenEntity = imageDao.getUserAuthToken(authorizationToken);
-
+        //throwing exception when user is not logged in
+        if(userAuthTokenEntity==null){
+            throw  new UploadFailedException("UP-001","User is not signed in, sign in to upload an image");
+        }
         imageEntity.setUser_id(userAuthTokenEntity.getUser());
-        return null;
+        imageDao.createImage(imageEntity); //saving image in database
+        return imageEntity;
     }
 }

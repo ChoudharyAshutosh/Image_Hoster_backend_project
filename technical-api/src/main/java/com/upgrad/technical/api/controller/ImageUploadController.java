@@ -25,6 +25,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/")
+//implementing endpoint for uploading image
 public class ImageUploadController {
 
     @Autowired
@@ -41,9 +42,9 @@ public class ImageUploadController {
         imageEntity.setCreated_at(ZonedDateTime.now());
         imageEntity.setStatus("REGISTERED");
 
-
+        //calling business logic for uploading image
         final ImageEntity createdimageEntity = imageUploadService.upload(imageEntity, authorization);
         ImageUploadResponse imageUploadResponse = new ImageUploadResponse().id(createdimageEntity.getUuid()).status("IMAGE SUCCESSFULLY REGISTERED");
-        return null;
+        return new ResponseEntity<ImageUploadResponse>(imageUploadResponse,HttpStatus.CREATED); //sending image uuid with 201 status code
     }
 }
