@@ -2,7 +2,7 @@ package com.upgrad.technical.service.exception;
 
 import java.io.PrintStream;
 import java.io.PrintWriter;
-
+//class for handling authentication exceptions
 public class AuthenticationFailedException extends Exception {
     private final String code;
     private final String errorMessage;

@@ -24,6 +24,9 @@ public class AuthenticationService {
     @Transactional(propagation = Propagation.REQUIRED)
     public UserAuthTokenEntity authenticate(final String username, final String password) throws AuthenticationFailedException {
         UserEntity userEntity = userDao.getUserByEmail(username);
+        //throwing user not found error message
+        if(userEntity==null)
+            throw new AuthenticationFailedException("ATH-001","User with email not found");
         //encrypting password , which was got from authorization header
         final String encryptedPassword = CryptographyProvider.encrypt(password, userEntity.getSalt());
         if(encryptedPassword.equals(userEntity.getPassword())){
@@ -40,7 +43,8 @@ public class AuthenticationService {
             userDao.updateUser(userEntity); //updating user's last login in user table
             return userAuthToken; //returning authenticated user auth token
         }else {
-            return null;
+            //throwing password failed error message
+            throw new AuthenticationFailedException("ATH-002","Password failed");
         }
     }
 }

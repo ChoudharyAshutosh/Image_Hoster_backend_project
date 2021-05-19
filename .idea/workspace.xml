@@ -8,15 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ed3f177-2b00-4cd4-a89a-4631b572d221" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/technical-api/src/main/java/com/upgrad/technical/api/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/technical-api/src/main/java/com/upgrad/technical/api/controller/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/technical-api/target/classes/com/upgrad/technical/api/controller/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/technical-api/target/classes/com/upgrad/technical/api/controller/AuthenticationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/technical-api/src/main/java/com/upgrad/technical/api/exception/RestExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/technical-api/src/main/java/com/upgrad/technical/api/exception/RestExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/technical-service/src/main/java/com/upgrad/technical/service/business/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/technical-service/src/main/java/com/upgrad/technical/service/business/AuthenticationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/technical-service/src/main/java/com/upgrad/technical/service/business/SignupBusinessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/technical-service/src/main/java/com/upgrad/technical/service/business/SignupBusinessService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/technical-service/src/main/java/com/upgrad/technical/service/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/technical-service/src/main/java/com/upgrad/technical/service/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/business/AuthenticationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/business/AuthenticationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/entity/UserEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/entity/UserEntity.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,17 +94,6 @@
     <property name="project.structure.side.proportion" value="0.6643678" />
   </component>
   <component name="RunManager" selected="Spring Boot.TechnicalApiApplication">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Unnamed" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -198,7 +183,8 @@
       <workItem from="1535720126894" duration="1040000" />
       <workItem from="1537099641916" duration="4058000" />
       <workItem from="1537540059296" duration="1362000" />
-      <workItem from="1621350273327" duration="11617000" />
+      <workItem from="1621350273327" duration="12304000" />
+      <workItem from="1621397854813" duration="1941000" />
     </task>
     <servers />
   </component>
@@ -218,6 +204,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="masterDetails">
     <states>
