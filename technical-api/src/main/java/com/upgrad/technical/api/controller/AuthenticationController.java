@@ -25,7 +25,7 @@ import java.util.UUID;
 public class AuthenticationController {
     @Autowired
     private AuthenticationService authenticationService;
-
+    //mapping authentication endpoint
     @RequestMapping(method = RequestMethod.POST, path = "/auth/login", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<AuthorizedUserResponse> login(@RequestHeader("authorization") final String authorization) throws AuthenticationFailedException {
         byte[] decode = Base64.getDecoder().decode(authorization); //decoding from base64 encoding

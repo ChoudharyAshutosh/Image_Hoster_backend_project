@@ -30,7 +30,7 @@ public class ImageUploadController {
 
     @Autowired
     private ImageUploadService imageUploadService;
-
+    //mapping image uploading api
     @RequestMapping(method = RequestMethod.POST, path = "/imageupload", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<ImageUploadResponse> imageupload(final ImageUploadRequest imageUploadRequest, @RequestHeader("authorization") final String authorization) throws UploadFailedException, UnsupportedEncodingException {
         final ImageEntity imageEntity = new ImageEntity();

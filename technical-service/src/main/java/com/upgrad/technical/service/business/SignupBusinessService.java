@@ -18,6 +18,7 @@ public class SignupBusinessService {
     //implementing business logic for creating user
     @Transactional(propagation = Propagation.REQUIRED)
     public UserEntity signup(UserEntity userEntity) {
+        //encrypting password
         String[] encryptedText = passwordCryptographyProvider.encrypt(userEntity.getPassword());
         userEntity.setSalt(encryptedText[0]);
         userEntity.setPassword(encryptedText[1]);

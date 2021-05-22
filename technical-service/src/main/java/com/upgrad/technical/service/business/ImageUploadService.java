@@ -23,6 +23,7 @@ public class ImageUploadService {
 
     @Transactional(propagation = Propagation.REQUIRED)
     public ImageEntity upload(ImageEntity imageEntity, final String authorizationToken) throws UploadFailedException {
+        //fetching user with given access token
         UserAuthTokenEntity userAuthTokenEntity = imageDao.getUserAuthToken(authorizationToken);
         //throwing exception when user is not logged in
         if(userAuthTokenEntity==null){

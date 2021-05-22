@@ -16,6 +16,7 @@ import java.time.ZonedDateTime;
 import java.util.UUID;
 @RestController
 @RequestMapping("/")
+//implementing endpoint for sign up
 public class SignupController {
 
     @Autowired

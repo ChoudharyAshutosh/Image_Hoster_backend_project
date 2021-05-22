@@ -24,7 +24,7 @@ public class AdminService {
     private ImageDao imageDao;
 
     public ImageEntity getImage(final String imageUuid, final String authorization) throws ImageNotFoundException, UnauthorizedException, UserNotSignedInException {
-
+        //fetching user with given access token
         UserAuthTokenEntity userAuthTokenEntity = imageDao.getUserAuthToken(authorization);
         //handling user not signed exception
         if(userAuthTokenEntity==null){
@@ -47,6 +47,7 @@ public class AdminService {
 
     @Transactional(propagation = Propagation.REQUIRED)
     public ImageEntity updateImage(final ImageEntity imageEntity, final String authorization) throws ImageNotFoundException, UnauthorizedException, UserNotSignedInException {
+        //fetchiing user with given access token
         UserAuthTokenEntity userAuthTokenEntity = imageDao.getUserAuthToken(authorization);
         //handling user not signed exception
         if(userAuthTokenEntity==null){
@@ -61,7 +62,7 @@ public class AdminService {
         //fetching image to be updated
         ImageEntity imageToBeUpdated = imageDao.getImageById(imageEntity.getId());
         if(imageToBeUpdated==null){
-            throw new ImageNotFoundException("IMG-001","Image with Id not found");
+            throw new ImageNotFoundException("IMG-002","Image with Id not found");
         }
         imageToBeUpdated.setImage(imageEntity.getImage());
         imageToBeUpdated.setName(imageEntity.getName());

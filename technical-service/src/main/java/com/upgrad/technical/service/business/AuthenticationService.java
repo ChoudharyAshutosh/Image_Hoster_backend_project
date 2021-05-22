@@ -23,6 +23,7 @@ public class AuthenticationService {
     //implementing business logic for authentication
     @Transactional(propagation = Propagation.REQUIRED)
     public UserAuthTokenEntity authenticate(final String username, final String password) throws AuthenticationFailedException {
+        //fetching user with given uuid
         UserEntity userEntity = userDao.getUserByEmail(username);
         //throwing user not found error message
         if(userEntity==null)
@@ -35,6 +36,7 @@ public class AuthenticationService {
             userAuthToken.setUser(userEntity);
             final ZonedDateTime now=ZonedDateTime.now();
             final ZonedDateTime expiresAt=now.plusHours(8);
+            //generating access token
             userAuthToken.setAccessToken(jwtTokenProvider.generateToken(userEntity.getUuid(), now, expiresAt));
             userAuthToken.setLoginAt(now);
             userAuthToken.setExpiresAt(expiresAt);
